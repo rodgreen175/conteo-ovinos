@@ -30,112 +30,51 @@
   --radius-lg: 16px;
   --mono: 'Courier New', Courier, monospace;
 }
-html, body {
-  height: 100%;
-  background: var(--bg);
-  font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  font-size: 17px;
-}
+html, body { height: 100%; background: var(--bg); font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; color: var(--text); font-size: 17px; }
 .app { max-width: 480px; margin: 0 auto; padding: 0 10px 80px; }
-
-/* HEADER */
 .header { background: var(--blue); margin: 0 -10px; padding: 18px 18px 14px; margin-bottom: 14px; }
 .header h1 { font-size: 21px; font-weight: 700; color: white; }
 .header p { font-size: 14px; color: rgba(255,255,255,0.72); margin-top: 3px; }
-
-/* TABS */
 .tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--surface); border-radius: var(--radius-lg); border: 0.5px solid var(--border); margin-bottom: 14px; overflow: hidden; }
-.tab-btn { height: 52px; border: none; background: none; font-size: 16px; font-weight: 500; color: var(--text2); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background 0.15s; }
+.tab-btn { height: 52px; border: none; background: none; font-size: 16px; font-weight: 500; color: var(--text2); cursor: pointer; transition: background 0.15s; }
 .tab-btn.active { background: var(--blue); color: white; font-weight: 700; }
-
-/* CARD */
 .card { background: var(--surface); border-radius: var(--radius-lg); border: 0.5px solid var(--border); padding: 16px; margin-bottom: 12px; }
 .card-title { font-size: 13px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
-
-/* LOTE / FECHA row */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
 .field label { display: block; font-size: 14px; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
-.field input[type=text], .field input[type=date] {
-  width: 100%; height: 54px; padding: 0 14px; font-size: 17px;
-  background: var(--surface2); border: 2px solid var(--border2);
-  border-radius: var(--radius); color: var(--text); outline: none;
-  font-family: inherit; -webkit-appearance: none; appearance: none;
-}
+.field input[type=text], .field input[type=date] { width: 100%; height: 54px; padding: 0 14px; font-size: 17px; background: var(--surface2); border: 2px solid var(--border2); border-radius: var(--radius); color: var(--text); outline: none; }
 .field input[type=text]:focus, .field input[type=date]:focus { border-color: var(--blue); background: #eef4fc; }
-
-/* CATEGORIAS — una columna, campos grandes */
 .cats-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-.cat-row {
-  display: grid; grid-template-columns: 1fr 110px;
-  align-items: center; gap: 10px;
-  background: var(--surface2); border: 1.5px solid var(--border);
-  border-radius: var(--radius); padding: 10px 14px;
-  transition: border-color 0.15s;
-}
+.cat-row { display: grid; grid-template-columns: 1fr 110px; align-items: center; gap: 10px; background: var(--surface2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 8px 12px; }
 .cat-row.active { border-color: var(--blue); background: #eef4fc; }
 .cat-row.filled { border-color: var(--green); background: var(--green-light); }
-.cat-label { font-size: 18px; font-weight: 600; color: var(--text); }
-.cat-label small { display: block; font-size: 13px; color: var(--text2); font-weight: 400; margin-top: 1px; }
-.cat-input {
-  height: 56px; width: 100%; font-size: 28px; font-weight: 700;
-  text-align: center; font-family: var(--mono);
-  background: var(--surface); border: 2px solid var(--border2);
-  border-radius: var(--radius); color: var(--text); outline: none;
-  -webkit-appearance: none; appearance: none;
-}
+.cat-label { font-size: 16px; font-weight: 600; color: var(--text); }
+.cat-input { height: 48px; width: 100%; font-size: 24px; font-weight: 700; text-align: center; font-family: var(--mono); background: var(--surface); border: 2px solid var(--border2); border-radius: var(--radius); color: var(--text); outline: none; }
 .cat-input:focus { border-color: var(--blue); }
 .cat-input.filled { border-color: var(--green); color: var(--green-dark); }
-
-/* TOTAL */
-.total-bar {
-  display: flex; justify-content: space-between; align-items: center;
-  background: var(--blue-light); border-radius: var(--radius);
-  padding: 14px 18px; margin-bottom: 14px;
-}
+.total-bar { display: flex; justify-content: space-between; align-items: center; background: var(--blue-light); border-radius: var(--radius); padding: 12px 18px; margin-bottom: 14px; }
 .total-bar span { font-size: 16px; color: var(--blue-dark); font-weight: 600; }
-.total-bar .num { font-size: 34px; font-family: var(--mono); font-weight: 700; color: var(--blue-dark); }
-
-/* STATUS */
+.total-bar .num { font-size: 32px; font-family: var(--mono); font-weight: 700; color: var(--blue-dark); }
 .status { font-size: 14px; text-align: center; min-height: 22px; color: var(--text3); margin-bottom: 10px; }
 .status.ok { color: var(--green); }
 .status.err { color: var(--red); font-weight: 600; }
-
-/* BUTTONS */
-.btn-primary {
-  width: 100%; height: 60px; background: var(--blue); color: white; border: none;
-  border-radius: var(--radius); font-size: 18px; font-weight: 700; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  -webkit-tap-highlight-color: transparent; transition: background 0.15s, transform 0.1s;
-  letter-spacing: -0.2px;
-}
+.btn-primary { width: 100%; height: 56px; background: var(--blue); color: white; border: none; border-radius: var(--radius); font-size: 18px; font-weight: 700; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .btn-primary:active { background: var(--blue-dark); transform: scale(0.98); }
-
-.btn-success {
-  width: 100%; height: 58px; background: var(--green); color: white; border: none;
-  border-radius: var(--radius); font-size: 17px; font-weight: 700; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 12px;
-  -webkit-tap-highlight-color: transparent; transition: background 0.15s;
-}
+.btn-success { width: 100%; height: 54px; background: var(--green); color: white; border: none; border-radius: var(--radius); font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 12px; transition: background 0.15s; }
 .btn-success:active { background: var(--green-dark); }
 .btn-success:disabled { background: var(--surface2); color: var(--text3); border: 1px solid var(--border); cursor: not-allowed; }
-
-/* LOTES LIST */
 .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 7px; background: var(--blue-light); color: var(--blue-dark); border-radius: 20px; font-size: 13px; font-weight: 700; margin-left: auto; }
-.lote-item { background: var(--surface2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px; margin-bottom: 10px; }
-.lote-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.lote-item { background: var(--surface2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 10px; }
+.lote-top { display: flex; justify-content: space-between; align-items: center; }
 .lote-nombre { font-size: 17px; font-weight: 700; color: var(--text); }
-.lote-fecha { font-size: 13px; color: var(--text3); margin-top: 2px; }
-.lote-total-num { font-size: 22px; font-family: var(--mono); font-weight: 700; color: var(--blue); text-align: right; }
+.lote-fecha { font-size: 12px; color: var(--text3); margin-top: 3px; }
+.lote-total-num { font-size: 20px; font-family: var(--mono); font-weight: 700; color: var(--blue); text-align: right; }
 .lote-total-lbl { font-size: 11px; color: var(--text3); text-align: right; }
 .lote-cats { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
-.cat-badge { font-size: 13px; background: var(--surface); border: 0.5px solid var(--border); border-radius: 20px; padding: 4px 11px; color: var(--text2); font-weight: 500; }
-.del-btn { display: block; width: 100%; margin-top: 12px; height: 48px; background: none; border: 1.5px solid var(--border2); border-radius: var(--radius); color: var(--red); font-size: 15px; font-weight: 600; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.cat-badge { font-size: 12px; background: var(--surface); border: 0.5px solid var(--border); border-radius: 20px; padding: 3px 10px; color: var(--text2); font-weight: 500; }
+.del-btn { display: block; width: 100%; margin-top: 10px; height: 40px; background: none; border: 1px solid var(--border2); border-radius: var(--radius); color: var(--red); font-size: 14px; font-weight: 600; cursor: pointer; }
 .del-btn:active { background: var(--red-light); }
-
 .empty { text-align: center; padding: 32px 16px; color: var(--text3); font-size: 15px; line-height: 1.7; }
-
 .section-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
 .view { display: none; }
 .view.active { display: block; }
@@ -145,59 +84,38 @@ html, body {
 <div class="app">
   <div class="header">
     <h1>🐑 Conteo de Ovinos</h1>
-    <p>Registro por categoría y lote</p>
+    <p>Registro por lote</p>
   </div>
 
   <div class="tabs">
     <button class="tab-btn active" id="tabNuevo" onclick="showTab('nuevo')">➕ Nuevo lote</button>
-    <button class="tab-btn" id="tabLotes" onclick="showTab('lotes')">📋 Lotes guardados</button>
+    <button class="tab-btn" id="tabLotes" onclick="showTab('lotes')">📋 Lotes</button>
   </div>
 
   <!-- VISTA NUEVO LOTE -->
   <div class="view active" id="viewNuevo">
     <div class="card">
-      <div class="card-title">Datos del lote</div>
+      <div class="card-title">Lote</div>
       <div class="two-col">
         <div class="field">
-          <label for="inLote">Nombre / N° lote</label>
-          <input type="text" id="inLote" placeholder="Lote 1…" autocomplete="off" />
+          <label>Nombre / N°</label>
+          <input type="text" id="inLote" autocomplete="off" />
         </div>
         <div class="field">
-          <label for="inFecha">Fecha</label>
+          <label>Fecha</label>
           <input type="date" id="inFecha" />
         </div>
       </div>
 
-      <div class="card-title">Cantidades por categoría</div>
+      <div class="card-title">Cantidades</div>
       <div class="cats-list">
-        <div class="cat-row" id="row0">
-          <div class="cat-label">🐑 Ovejas<small>hembras adultas</small></div>
-          <input class="cat-input" type="tel" id="c0" inputmode="numeric" placeholder="0" oninput="onCat(this,0)" onfocus="onFocus(0)" onblur="onBlur(0)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row1">
-          <div class="cat-label">🐑 Borregas<small>hembras jóvenes</small></div>
-          <input class="cat-input" type="tel" id="c1" inputmode="numeric" placeholder="0" oninput="onCat(this,1)" onfocus="onFocus(1)" onblur="onBlur(1)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row2">
-          <div class="cat-label">🐏 Borregos<small>machos jóvenes</small></div>
-          <input class="cat-input" type="tel" id="c2" inputmode="numeric" placeholder="0" oninput="onCat(this,2)" onfocus="onFocus(2)" onblur="onBlur(2)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row3">
-          <div class="cat-label">🐏 Capones<small>machos castrados</small></div>
-          <input class="cat-input" type="tel" id="c3" inputmode="numeric" placeholder="0" oninput="onCat(this,3)" onfocus="onFocus(3)" onblur="onBlur(3)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row4">
-          <div class="cat-label">🐑 Corderos<small>machos cría</small></div>
-          <input class="cat-input" type="tel" id="c4" inputmode="numeric" placeholder="0" oninput="onCat(this,4)" onfocus="onFocus(4)" onblur="onBlur(4)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row5">
-          <div class="cat-label">🐑 Corderas<small>hembras cría</small></div>
-          <input class="cat-input" type="tel" id="c5" inputmode="numeric" placeholder="0" oninput="onCat(this,5)" onfocus="onFocus(5)" onblur="onBlur(5)" autocomplete="off" />
-        </div>
-        <div class="cat-row" id="row6">
-          <div class="cat-label">🐏 Carneros<small>machos reproductores</small></div>
-          <input class="cat-input" type="tel" id="c6" inputmode="numeric" placeholder="0" oninput="onCat(this,6)" onfocus="onFocus(6)" onblur="onBlur(6)" autocomplete="off" />
-        </div>
+        <div class="cat-row" id="row0"><div class="cat-label">🐑 Ovejas</div><input class="cat-input" type="tel" id="c0" inputmode="numeric" placeholder="0" oninput="onCat(this,0)" onfocus="onFocus(0)" onblur="onBlur(0)" autocomplete="off" /></div>
+        <div class="cat-row" id="row1"><div class="cat-label">🐑 Borregas</div><input class="cat-input" type="tel" id="c1" inputmode="numeric" placeholder="0" oninput="onCat(this,1)" onfocus="onFocus(1)" onblur="onBlur(1)" autocomplete="off" /></div>
+        <div class="cat-row" id="row2"><div class="cat-label">🐏 Borregos</div><input class="cat-input" type="tel" id="c2" inputmode="numeric" placeholder="0" oninput="onCat(this,2)" onfocus="onFocus(2)" onblur="onBlur(2)" autocomplete="off" /></div>
+        <div class="cat-row" id="row3"><div class="cat-label">🐏 Capones</div><input class="cat-input" type="tel" id="c3" inputmode="numeric" placeholder="0" oninput="onCat(this,3)" onfocus="onFocus(3)" onblur="onBlur(3)" autocomplete="off" /></div>
+        <div class="cat-row" id="row4"><div class="cat-label">🐑 Corderos</div><input class="cat-input" type="tel" id="c4" inputmode="numeric" placeholder="0" oninput="onCat(this,4)" onfocus="onFocus(4)" onblur="onBlur(4)" autocomplete="off" /></div>
+        <div class="cat-row" id="row5"><div class="cat-label">🐑 Corderas</div><input class="cat-input" type="tel" id="c5" inputmode="numeric" placeholder="0" oninput="onCat(this,5)" onfocus="onFocus(5)" onblur="onBlur(5)" autocomplete="off" /></div>
+        <div class="cat-row" id="row6"><div class="cat-label">🐏 Carneros</div><input class="cat-input" type="tel" id="c6" inputmode="numeric" placeholder="0" oninput="onCat(this,6)" onfocus="onFocus(6)" onblur="onBlur(6)" autocomplete="off" /></div>
       </div>
 
       <div class="total-bar">
@@ -205,10 +123,11 @@ html, body {
         <span class="num" id="spanTotal">0</span>
       </div>
 
-      <div class="status" id="statusMsg">Completá los datos y guardá el lote</div>
+      <div class="status" id="statusMsg">Listo</div>
+      
       <button class="btn-primary" onclick="guardarLote()">💾 Guardar lote</button>
-      <button class="btn-success" id="btnExportNuevo" onclick="exportar()" disabled style="margin-top:10px;">
-        📊 Exportar lotes a Excel (.xlsx)
+      <button class="btn-success" id="btnExport" onclick="exportarYBorrar()" disabled>
+        📊 Exportar y borrar datos
       </button>
     </div>
   </div>
@@ -217,15 +136,12 @@ html, body {
   <div class="view" id="viewLotes">
     <div class="card">
       <div class="section-hdr">
-        <span class="card-title" style="margin:0;">Lotes guardados</span>
+        <span class="card-title" style="margin:0;">Lotes registrados</span>
         <span class="badge" id="badgeCount">0</span>
       </div>
       <div id="lotesWrap">
-        <div class="empty">🐑<br><br>Aún no hay lotes guardados.<br>Andá a "Nuevo lote" para registrar.</div>
+        <div class="empty">🐑<br><br>Aún no hay lotes.</div>
       </div>
-      <button class="btn-success" id="btnExport" onclick="exportar()" disabled>
-        📊 Exportar todos a Excel (.xlsx)
-      </button>
     </div>
   </div>
 </div>
@@ -234,36 +150,32 @@ html, body {
 <script>
 'use strict';
 var CATS = ['Ovejas','Borregas','Borregos','Capones','Corderos','Corderas','Carneros'];
-var STORAGE_KEY = 'ovinos_lotes_v1';
 var lotes = [];
 
-function cargarDatos() {
-  try { var r = localStorage.getItem(STORAGE_KEY); if (r) lotes = JSON.parse(r); } catch(e) { lotes = []; }
-}
-function guardarDatos() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(lotes)); } catch(e) {}
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-  cargarDatos();
   document.getElementById('inFecha').value = new Date().toISOString().slice(0,10);
-  actualizarBotonesExport();
+  cargarLotes();
 });
 
-function showTab(t) {
-  document.getElementById('viewNuevo').classList.toggle('active', t === 'nuevo');
-  document.getElementById('viewLotes').classList.toggle('active', t === 'lotes');
-  document.getElementById('tabNuevo').classList.toggle('active', t === 'nuevo');
-  document.getElementById('tabLotes').classList.toggle('active', t === 'lotes');
-  if (t === 'lotes') renderLotes();
+function cargarLotes() {
+  var guardado = localStorage.getItem('conteo_ovinos_lotes');
+  if (guardado) {
+    lotes = JSON.parse(guardado);
+    renderLotes();
+    document.getElementById('btnExport').disabled = lotes.length === 0;
+  }
 }
 
-function onFocus(i) {
-  document.getElementById('row'+i).classList.add('active');
+function guardarLotes() {
+  localStorage.setItem('conteo_ovinos_lotes', JSON.stringify(lotes));
+  renderLotes();
+  document.getElementById('btnExport').disabled = lotes.length === 0;
+  document.getElementById('badgeCount').textContent = lotes.length;
 }
-function onBlur(i) {
-  document.getElementById('row'+i).classList.remove('active');
-}
+
+function onFocus(i) { document.getElementById('row'+i).classList.add('active'); }
+function onBlur(i) { document.getElementById('row'+i).classList.remove('active'); }
+
 function onCat(inp, i) {
   var v = parseInt(inp.value, 10);
   var filled = !isNaN(v) && v > 0;
@@ -282,102 +194,142 @@ function calcTotal() {
   return t;
 }
 
+function limpiarCantidades() {
+  for (var i = 0; i < 7; i++) {
+    var inp = document.getElementById('c'+i);
+    inp.value = '';
+    inp.classList.remove('filled');
+    document.getElementById('row'+i).classList.remove('filled');
+  }
+  document.getElementById('spanTotal').textContent = '0';
+}
+
 function guardarLote() {
   var lote = document.getElementById('inLote').value.trim();
   var fecha = document.getElementById('inFecha').value;
-  if (!lote) { setStatus('Ingresá un nombre o número de lote.', 'err'); document.getElementById('inLote').focus(); return; }
-  if (!fecha) { setStatus('Seleccioná una fecha.', 'err'); return; }
+  
+  if (!lote) { setStatus('Complete el nombre del lote', 'err'); document.getElementById('inLote').focus(); return; }
+  if (!fecha) { setStatus('Seleccione fecha', 'err'); return; }
+  
   var total = calcTotal();
-  if (total === 0) { setStatus('Ingresá al menos una categoría con cantidad mayor a 0.', 'err'); return; }
+  if (total === 0) { setStatus('Ingrese al menos una cantidad', 'err'); return; }
 
   var cats = [];
   for (var i = 0; i < 7; i++) {
     var v = parseInt(document.getElementById('c'+i).value, 10);
     cats.push(isNaN(v) || v < 0 ? 0 : v);
   }
-  lotes.push({ lote: lote, fecha: fecha, cats: cats, total: total });
-  guardarDatos();
-
-  for (var i = 0; i < 7; i++) {
-    var inp = document.getElementById('c'+i);
-    inp.value = ''; inp.classList.remove('filled');
-    document.getElementById('row'+i).classList.remove('filled');
-  }
-  document.getElementById('inLote').value = '';
-  document.getElementById('spanTotal').textContent = '0';
-  setStatus('✓ Lote "' + lote + '" guardado — ' + total + ' animales', 'ok');
-  actualizarBotonesExport();
+  
+  lotes.push({ 
+    lote: lote, 
+    fecha: fecha, 
+    cats: cats, 
+    total: total
+  });
+  
+  guardarLotes();
+  limpiarCantidades();  // Solo limpia las cantidades, NO el nombre del lote ni la fecha
   document.getElementById('c0').focus();
+  setStatus('✓ Lote "' + lote + '" guardado — ' + total + ' animales', 'ok');
 }
 
 function eliminarLote(idx) {
   if (!confirm('¿Eliminar el lote "' + lotes[idx].lote + '"?')) return;
   lotes.splice(idx, 1);
-  guardarDatos();
-  renderLotes();
-}
-
-function actualizarBotonesExport() {
-  var hay = lotes.length > 0;
-  document.getElementById('btnExportNuevo').disabled = !hay;
-  if (document.getElementById('btnExport')) document.getElementById('btnExport').disabled = !hay;
+  guardarLotes();
+  setStatus('Lote eliminado', 'ok');
 }
 
 function renderLotes() {
   var wrap = document.getElementById('lotesWrap');
   document.getElementById('badgeCount').textContent = lotes.length;
-  document.getElementById('btnExport').disabled = lotes.length === 0;
-  document.getElementById('btnExportNuevo').disabled = lotes.length === 0;
+  
   if (lotes.length === 0) {
-    wrap.innerHTML = '<div class="empty">🐑<br><br>Aún no hay lotes guardados.<br>Andá a "Nuevo lote" para registrar.</div>';
+    wrap.innerHTML = '<div class="empty">🐑<br><br>Aún no hay lotes.</div>';
     return;
   }
+  
   var html = '';
-  lotes.forEach(function(l, idx) {
+  for (var i = 0; i < lotes.length; i++) {
+    var l = lotes[i];
     var partes = l.fecha.split('-');
     var fechaFmt = partes[2]+'/'+partes[1]+'/'+partes[0];
-    var badges = CATS.map(function(c,i){ return l.cats[i]>0 ? '<span class="cat-badge">'+c+': '+l.cats[i]+'</span>' : ''; }).join('');
-    html += '<div class="lote-item">' +
-      '<div class="lote-top">' +
-        '<div><div class="lote-nombre">'+l.lote+'</div><div class="lote-fecha">'+fechaFmt+'</div></div>' +
-        '<div><div class="lote-total-num">'+l.total+'</div><div class="lote-total-lbl">animales</div></div>' +
-      '</div>' +
-      '<div class="lote-cats">'+badges+'</div>' +
-      '<button class="del-btn" onclick="eliminarLote('+idx+')">🗑 Eliminar lote</button>' +
-    '</div>';
-  });
+    
+    var badges = '';
+    for (var j = 0; j < CATS.length; j++) {
+      if (l.cats[j] > 0) {
+        badges += '<span class="cat-badge">'+CATS[j]+': '+l.cats[j]+'</span>';
+      }
+    }
+    
+    html += '<div class="lote-item">';
+    html += '<div class="lote-top"><div><div class="lote-nombre">📦 ' + l.lote + '</div><div class="lote-fecha">' + fechaFmt + '</div></div><div><div class="lote-total-num">' + l.total + '</div><div class="lote-total-lbl">animales</div></div></div>';
+    html += '<div class="lote-cats">' + badges + '</div>';
+    html += '<button class="del-btn" onclick="eliminarLote(' + i + ')">🗑 Eliminar</button>';
+    html += '</div>';
+  }
   wrap.innerHTML = html;
 }
 
-function exportar() {
-  if (lotes.length === 0) return;
+function exportarYBorrar() {
+  if (lotes.length === 0) {
+    setStatus('No hay datos para exportar', 'err');
+    return;
+  }
+  
   var fechaHoy = new Date().toLocaleDateString('es-UY');
   var horaHoy = new Date().toLocaleTimeString('es-UY',{hour:'2-digit',minute:'2-digit'});
   var filas = [
-    ['CONTEO DE OVINOS POR CATEGORÍA','','','','','','',''],
+    ['CONTEO DE OVINOS','','','','','','',''],
     ['Exportado:', fechaHoy+' '+horaHoy,'','','','','',''],
     ['','','','','','','',''],
     ['Lote','Fecha'].concat(CATS).concat(['TOTAL'])
   ];
-  lotes.forEach(function(l) {
-    var p = l.fecha.split('-');
-    filas.push([l.lote, p[2]+'/'+p[1]+'/'+p[0]].concat(l.cats).concat([l.total]));
-  });
-  var totCats=[0,0,0,0,0,0,0]; var gt=0;
-  lotes.forEach(function(l){ l.cats.forEach(function(v,i){totCats[i]+=v;}); gt+=l.total; });
-  filas.push(['','','','','','','','','']);
-  filas.push(['','TOTALES'].concat(totCats).concat([gt]));
+  
+  for (var i = 0; i < lotes.length; i++) {
+    var l = lotes[i];
+    var partes = l.fecha.split('-');
+    var fechaFmt = partes[2]+'/'+partes[1]+'/'+partes[0];
+    filas.push([l.lote, fechaFmt].concat(l.cats).concat([l.total]));
+  }
+  
+  var totCats = [0,0,0,0,0,0,0];
+  var gt = 0;
+  for (var i = 0; i < lotes.length; i++) {
+    for (var j = 0; j < 7; j++) {
+      totCats[j] += lotes[i].cats[j];
+    }
+    gt += lotes[i].total;
+  }
+  
+  filas.push(['','','','','','','','']);
+  filas.push(['TOTALES',''].concat(totCats).concat([gt]));
+  
   var wb = XLSX.utils.book_new();
   var ws = XLSX.utils.aoa_to_sheet(filas);
-  ws['!cols']=[{wch:20},{wch:12},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10}];
+  ws['!cols'] = [{wch:20},{wch:12},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10},{wch:10}];
   XLSX.utils.book_append_sheet(wb, ws, 'Conteo Ovinos');
-  XLSX.writeFile(wb, 'conteo_ovinos_'+new Date().toISOString().slice(0,10)+'.xlsx');
-  setStatus('✓ Excel exportado correctamente.', 'ok');
+  XLSX.writeFile(wb, 'conteo_ovinos_' + new Date().toISOString().slice(0,10) + '.xlsx');
+  
+  // Borrar todos los datos despuÃ©s de exportar
+  lotes = [];
+  guardarLotes();
+  limpiarCantidades();
+  setStatus('✓ Exportado y borrado. Comience de nuevo.', 'ok');
 }
 
 function setStatus(msg, type) {
   var el = document.getElementById('statusMsg');
-  el.textContent = msg; el.className = 'status'+(type?' '+type:'');
+  el.textContent = msg;
+  el.className = 'status' + (type ? ' '+type : '');
+}
+
+function showTab(t) {
+  document.getElementById('viewNuevo').classList.toggle('active', t === 'nuevo');
+  document.getElementById('viewLotes').classList.toggle('active', t === 'lotes');
+  document.getElementById('tabNuevo').classList.toggle('active', t === 'nuevo');
+  document.getElementById('tabLotes').classList.toggle('active', t === 'lotes');
+  if (t === 'lotes') renderLotes();
 }
 </script>
 </body>
